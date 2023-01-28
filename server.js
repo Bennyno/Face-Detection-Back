@@ -11,7 +11,7 @@ const image = require('./controllers/image')
 const db = knex({
      client: 'pg',
      connection: {
-      host : 'postgresql-parallel-65305',
+      host : '127.0.0.1',
       port : 5432,
       user : 'postgres',
       password : 'Brf-axie0528',
@@ -40,6 +40,6 @@ app.get('/profile/:id',(req, res) =>{profile.handleProfile(req, res, db)})
 app.put('/image', (req, res)=>{ image.handleImage(req, res, db)})
 
 const PORT = process.env.PORT
-app.listen(PORT || 3001, ()=>{
+app.listen(PORT || 3000, ()=>{
     console.log(`app is running on port ${PORT}`)
 })
