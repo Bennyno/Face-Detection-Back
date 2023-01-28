@@ -12,7 +12,7 @@ const db = knex({
      client: 'pg',
      connection: {
       host : '127.0.0.1',
-      port : 5432,
+      port : 3001,
       user : 'postgres',
       password : 'Brf-axie0528',
       database : 'face-recognition'
@@ -40,6 +40,6 @@ app.get('/profile/:id',(req, res) =>{profile.handleProfile(req, res, db)})
 app.put('/image', (req, res)=>{ image.handleImage(req, res, db)})
 
 const PORT = process.env.PORT
-app.listen(PORT || 3000, ()=>{
+app.listen(PORT || 3001, ()=>{
     console.log(`app is running on port ${PORT}`)
 })
